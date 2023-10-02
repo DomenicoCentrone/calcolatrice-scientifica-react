@@ -1,0 +1,80 @@
+body{
+  background-color: black;
+  height: 100vh; /* Imposta l'altezza del body alla vista del dispositivo */
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra orizzontalmente */
+}
+
+.calculator {
+  width: 300px;
+  margin: 50px auto;
+  /* border: 1px solid #ccc; */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  /* background-color: #f4f4f4; Colorazione leggera di sfondo */
+}
+
+.display {
+  width: 95%;
+  box-sizing: border-box;
+  height: 40px;
+  border: none; /* Rimuovo il bordo */
+  margin-bottom: 20px;
+  padding: 30px 10px;
+  font-size: 40px;
+  background-color: black; /* Colore di sfondo nero */
+  color: white; /* Testo bianco */
+  text-align: right; /* Allinea il testo a destra */
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.buttons button {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  margin: 5px;
+  border-radius: 50%; /* Rendo i pulsanti rotondi */
+  border: none; /* Rimuovo i bordi */
+  background-color: #a5a5a5; /* Colorazione grigia per i pulsanti standard */
+  transition: transform 0.1s ease-in-out; /* Permette un'animazione morbida delle trasformazioni */
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center;
+
+}
+
+.buttons button:hover {
+  transform: scale(1.05); /* Ingrandisce il pulsante del 5% */
+}
+
+.buttons button:active {
+  transform: scale(0.95); /* Riduce il pulsante del 5% */
+}
+
+.buttons button, 
+.buttons button:visited, 
+.buttons button:focus, 
+.buttons button:active {
+    color: black; /* o qualsiasi altro colore tu voglia */
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* Questa proprietà rimuove il colore di evidenziazione quando si tocca un elemento su iOS */
+}
+
+
+.zero-button {
+  grid-column: span 2;     /* Permette al pulsante "0" di coprire due colonne */
+  width: calc(100% + 5px); /* Considera il gap tra i pulsanti. Qui suppongo che il gap sia 5px. */
+}
+
+/* Pulsanti operativi con colorazione arancione */
+.buttons button[data-operation] {
+  background-color: #ff9500; /* Colorazione arancione */
+}
+
